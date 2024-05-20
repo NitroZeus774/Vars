@@ -17,9 +17,6 @@ int fif(int x){
   return (x>=1)? fif(x-1) + fif(x-2) : x*-1 ;
 }
 
-void main(){
-  print(fif(20));
-}
 /*
 int fibonacci(int n) {
   if (n <= 1) {
