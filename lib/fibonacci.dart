@@ -1,3 +1,4 @@
+/*
 List<int> fibonacciIterativo(int n) {
   if (n == 0) {
     return [];
@@ -10,13 +11,16 @@ List<int> fibonacciIterativo(int n) {
     }
     return fibonacci;
   }
-}
+}*/
 
-/*
 int fif(int x){
-  return (x>=1)? fif(x-1) + fif(x-2) : x ;
+  return (x>=1)? fif(x-1) + fif(x-2) : x*-1 ;
 }
 
+void main(){
+  print(fif(20));
+}
+/*
 int fibonacci(int n) {
   if (n <= 1) {
     return n;

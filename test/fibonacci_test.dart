@@ -5,7 +5,7 @@ void main() {
   test('fibonacci', () {
     var num = 20;
     var value = 6765;
-    var result = fibonacciIterativo(num);
+    var result = fif(num);
 
     expect(result, value);
     print("paso el test");
