@@ -1,0 +1,41 @@
+
+#nombre del workflow
+name: Dart Continuous Integration
+
+#evento que activa el workflow
+on:
+  #Cuando se hace un push el repositorio se activa
+  push:
+    branches: [ main ]
+  #cuando cierra una pull request activa el workflow
+  pull_request:
+    branches: [ main ]
+
+#lista de trabajos a ejecutar
+jobs:
+
+  #este es el trabajo a ejecutar llamado lint-and-test
+  lint-and-test:
+
+    #ejecuta una maquina virtual linux
+    runs-on: ubuntu-latest
+
+    #estos son los pasos a seguir
+    steps:
+      - name: Clone source code
+        uses: actions/checkout@v3
+
+      - name: Install Dart
+        uses: dart-lang/setup-dart@v1.3
+
+      - name: Install dependencies
+        run: dart pub get
+
+      - name: Verify formatting
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze project source
+        run: dart analyze --fatal-infos
+
+      - name: Run tests
+        run: dart test
