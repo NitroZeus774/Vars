@@ -14,8 +14,8 @@ List<int> fibonacciIterativo(int n) {
 }
 */
 
-int fif(int x){
-  return (x>=1)? fif(x-1) + fif(x-2) : x*-1 ;
+int fif(int x) {
+  return (x >= 1) ? fif(x - 1) + fif(x - 2) : x * -1;
 }
 
 /*
