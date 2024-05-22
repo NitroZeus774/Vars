@@ -1,3 +1,3 @@
-int calculate() {
-  return 6 * 7;
+int calculate(int n) {
+  return 6 * n;
 }
